@@ -1,10 +1,10 @@
 create table list(
-  list_ID int PRIMARY KEY not null,
-  list_name varchar(32) not null,
-  list_sex varchar(6),
-  list_mobile_number varchar(24) not null,
-  list_birthday varchar(12),
-  list_address varchar(48)
+  list_ID int PRIMARY KEY not null,--list_ID 为主键且不能为空
+  list_name varchar(32) not null,--名字
+  list_sex varchar(6),--性别
+  list_mobile_number varchar(24) not null,--手机号
+  list_birthday varchar(12),--生日
+  list_address varchar(48)--地址
 );
 
 --添加数据
