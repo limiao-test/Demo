@@ -1,9 +1,9 @@
 create table family(
-  list_ID int,
-  family_number varchar(24) PRIMARY KEY,
-  family_address varchar(48)
+  family_ID int,--ID
+  family_number varchar(24) PRIMARY KEY,--电话主键
+  family_address varchar(48)--地址
 );
-
+--添加数据
 insert into family(list_ID,family_number,family_address)
   values (1,'11111111','YiLu');
 insert into family(list_ID,family_number,family_address)
