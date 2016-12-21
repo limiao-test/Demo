@@ -1,4 +1,4 @@
---个人
+--个人信息
 create table list(
   list_ID int PRIMARY KEY not null,--list_ID 为主键且不能为空
   list_name varchar(32) not null,--名字
