@@ -1,10 +1,10 @@
 create table office(
-  list_ID int,
-  office_number varchar(32) PRIMARY KEY,
-  office_address varchar(48),
-  office_e_mail varchar(32)
-)
-
+  office_ID int,--office_ID
+  office_number varchar(32) PRIMARY KEY,--办公电话
+  office_address varchar(48),--地址
+  office_e_mail varchar(32)--邮件
+);
+--添加数据
 insert into office(list_ID,office_number,office_address,office_e_mail)
   values(1,'11112222','YiLou','986497111@qq.com');
 insert into office(list_ID,office_number,office_address,office_e_mail)
