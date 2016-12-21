@@ -1,3 +1,4 @@
+--家庭
 create table family(
   family_ID int,--ID
   family_number varchar(24) PRIMARY KEY,--电话主键
