@@ -1,3 +1,4 @@
+--办公
 create table office(
   office_ID int,--office_ID
   office_number varchar(32) PRIMARY KEY,--办公电话
