@@ -1,3 +1,4 @@
+--分组
 create table flyme(
   flyme_ID int,--flyme ID
   flyme_grop varchar(32)--分组
