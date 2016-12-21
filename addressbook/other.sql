@@ -1,9 +1,11 @@
+--其他
 create table other(
-  list_ID int,
-  other_date datetime,
-  other_remarks varchar(128)
+  other_ID int,--other_ID
+  other_date datetime,--时间
+  other_remarks varchar(128)--备注
 );
 
+--添加数据
 insert into other(list_ID,other_date,other_remarks) values (1,now(),'love');
 insert into other(list_ID,other_date,other_remarks) values (2,now(),'love');
 insert into other(list_ID,other_date,other_remarks) values (3,now(),'hate');
