@@ -1,4 +1,5 @@
-create database Forun_;
+create database Forum_;
+use Forum_;
 create table Board(
   ID varchar(16) primary key not null,
   Name varchar(16) unique not null,
