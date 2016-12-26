@@ -1,14 +1,14 @@
 create database Forun_;
 create table Board(
-  ID varchar(16) primary key auto_increment,--主键，自增
-  Name varchar(16) unique not null,--名字唯一且不能为空
+  ID varchar(16) primary key not null,
+  Name varchar(16) unique not null,
   Board_date datetime not null,
   Description varchar(128)
 );
-insert into Board(ID,Name,Board_date,Description) values (null,'百度贴吧','2000-2-1','');
+insert into Board(ID,Name,Board_date,Description) values (1,'百度贴吧','2000-2-1','');
 --论坛
 create table Forum(
-  FID varchar(16) primary key not null auto_increment,
+  FID varchar(16) primary key not null,
   Forum_name varchar(16) unique not null,
   Forum_description varchar(128)
 );
