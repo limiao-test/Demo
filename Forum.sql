@@ -1,5 +1,3 @@
-create database Forum_;
-use Forun_;
 create table Board(
   ID varchar(16) primary key auto_increment,
   Name varchar(16) unique not null,
@@ -72,11 +70,13 @@ insert into User(UID,User_name,Password) values (43,'蓝瘦香菇','sfdd22223');
 insert into User(UID,User_name,Password) values (44,'海绵宝宝','ASddgfgfds');
 
 create table UserDesc(
-  UID varchar(16) primary key foreign key,
+  UID varchar(16) not null,
   Desic varchar(128),
   Name varchar(16),
   Sex varchar (6),
-  Brithday datetime
+  Brithday datetime,
+  primary key(UID),
+  cforeign key(UID)
 );
 insert into UserDesc(UID,Desic,Name,Sex,Brithday) values (41,'','萌宝','男','1997-3-20');
 
