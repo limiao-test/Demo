@@ -49,10 +49,12 @@ insert into Reply(Reply_ReplyDate,Reply_content,Title,UID,ReplyDate) values (now
 insert into Reply(Reply_ReplyDate,Reply_content,Title,UID,ReplyDate) values (now(),'哈哈','喜欢',44,now());
 
 create table Moderator(
-  FID varchar(16) primary key foreign key not null,
-  UID varchar(16) primary key foreign key not null,
+  FID varchar(16) not null,
+  UID varchar(16) not null,
   OperUID varchar(16) not null,
-  OperDate datetime not null
+  OperDate datetime not null,
+  primary key(FID,UID),
+  foreign key(FID,UID)
 );
 insert into Moderator(FID,UID,OperUID,OperDate) values (11,41,51,now());
 insert into Moderator(FID,UID,OperUID,OperDate) values (12,42,52，now());
@@ -79,8 +81,10 @@ create table UserDesc(
 insert into UserDesc(UID,Desic,Name,Sex,Brithday) values (41,'','萌宝','男','1997-3-20');
 
 create table Entity7(
-  UID varchar(16) primary key foreign key not null,
-  RoleID varchar(16) primary key foreign key not null
+  UID varchar(16) not null,
+  RoleID varchar(16) key not null,
+  primary key(UID,RoleID),
+  foreign key(UID,RoleID)
 );
 insert into Entity7(UID,RoleID) values (41,61);
 insert into Entity7(UID,RoleID) values (42,62);
@@ -95,8 +99,10 @@ insert into Role(RoleID,RoleName) values (61,'一级管理者');
 insert into Role(RoleID,RoleName) values (62,'一级管理者');
 
 create table Entity9(
-  RID varchar(16) primary key foreign key not null,
-  RoleID varchar(16) primary key foreign key not null
+  RID varchar(16) not null,
+  RoleID varchar(16) not null,
+  primary key(RID,RoleID),
+  foreign key(RID,RoleID)
 );
 insert into Entity9(RID,RoleID) values (71,61);
 insert into Entity9(RID,RoleID) values (72,62);
