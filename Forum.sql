@@ -1,12 +1,12 @@
+create database Forun_;
 create table Board(
-  ID varchar(16) primary key auto_increment,
-  Name varchar(16) unique not null,
+  ID varchar(16) primary key auto_increment,--主键，自增
+  Name varchar(16) unique not null,--名字唯一且不能为空
   Board_date datetime not null,
   Description varchar(128)
 );
-
 insert into Board(ID,Name,Board_date,Description) values (null,'百度贴吧','2000-2-1','');
-
+--论坛
 create table Forum(
   FID varchar(16) primary key not null auto_increment,
   Forum_name varchar(16) unique not null,
@@ -14,7 +14,7 @@ create table Forum(
 );
 insert into Forun(FID,Forum_name,Forum_description) values (11,'李毅吧',now(),'帝吧');
 insert into Forun(FID,Forum_name,Forum_description) values (12,'英雄联盟吧',now(),'人在塔在');
-
+--文章
 create table Article(
   AID varchar(16) primary key not null,
   Theme varchar(256) not null,
@@ -33,7 +33,7 @@ insert into Article(AID,Theme,Postdata,Views,content,UID,LastReplyDate,LastReply
   values(23,'琴瑟仙女技能详解辅助攻略',now(),4000,'能量和弦（被动）,Q英勇赞美诗：主力伤害技能,E坚毅咏叹调：能提供双抗，自动治疗,R迅捷鸣奏曲：辅助，加速作用',now(),31);
 insert into Article(AID,Theme,Postdata,Views,content,UID,LastReplyDate,LastReplyUID)
   values(24,'最新游戏活动',now(),5994,'2017赛季今日开启',now(),32);
-
+  --回复
 create table Reply(
   Reply_ReplyDate datetime primary key not null,
   Reply_content varchar(3072) not null,
@@ -45,7 +45,7 @@ insert into Reply(Reply_ReplyDate,Reply_content,Title,UID,ReplyDate) values (now
 insert into Reply(Reply_ReplyDate,Reply_content,Title,UID,ReplyDate) values (now(),'对啊','爆照',42,now());
 insert into Reply(Reply_ReplyDate,Reply_content,Title,UID,ReplyDate) values (now(),'琴女很棒','very good',43,now());
 insert into Reply(Reply_ReplyDate,Reply_content,Title,UID,ReplyDate) values (now(),'哈哈','喜欢',44,now());
-
+--版主
 create table Moderator(
   FID varchar(16) not null,
   UID varchar(16) not null,
@@ -58,7 +58,7 @@ insert into Moderator(FID,UID,OperUID,OperDate) values (11,41,51,now());
 insert into Moderator(FID,UID,OperUID,OperDate) values (12,42,52，now());
 insert into Moderator(FID,UID,OperUID,OperDate) values (13,43,53，now());
 insert into Moderator(FID,UID,OperUID,OperDate) values (14,44,54，now());
-
+--用户
 create table User(
   UID varchar(16) primary key not null,
   User_name varchar(16) not null,
@@ -68,9 +68,9 @@ insert into User(UID,User_name,Password) values (41,'萌宝','123123123');
 insert into User(UID,User_name,Password) values (42,'纸飞机','33333344444');
 insert into User(UID,User_name,Password) values (43,'蓝瘦香菇','sfdd22223');
 insert into User(UID,User_name,Password) values (44,'海绵宝宝','ASddgfgfds');
-
+--用户详细信息
 create table UserDesc(
-  UID varchar(16) not null,
+  UID varchar(16),
   Desic varchar(128),
   Name varchar(16),
   Sex varchar (6),
@@ -106,7 +106,7 @@ create table Entity9(
 );
 insert into Entity9(RID,RoleID) values (71,61);
 insert into Entity9(RID,RoleID) values (72,62);
-
+--权限
 create table Authority(
   RID varchar(16) primary key not null,
   RightName varchar(16) not null
